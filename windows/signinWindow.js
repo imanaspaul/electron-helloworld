@@ -4,18 +4,17 @@ const url = require('url');
 
 
 // Initialize main window
-const mainWindow = () => {
-  let mainWindow = new BrowserWindow({
+const singninWindow = () => {
+  let singninWindow = new BrowserWindow({
       autoHideMenuBar: true,
       webPreferences: {
                   nodeIntegration: true
                       }
     });
   // Load html in window
-  mainWindow.loadFile("./templates/index.html")
-  mainWindow.webContents.openDevTools();
-  mainWindow.setProgressBar(0.5)
-  return mainWindow;
+  singninWindow.loadFile("./templates/signin.html")
+  singninWindow.webContents.openDevTools();
+  return singninWindow;
 }
 
-module.exports = mainWindow;
+module.exports = singninWindow;

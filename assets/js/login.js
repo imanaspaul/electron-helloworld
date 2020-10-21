@@ -21,4 +21,9 @@ form.addEventListener("submit", (e) => {
     else{
         msg.innerHTML = "Please enter the correct value to each field";
     }
-})
+});
+
+document.getElementById('drag').ondragstart = (event) => {
+  event.preventDefault()
+  ipcRenderer.send('ondragstart', "https://images.pexels.com/photos/5635110/pexels-photo-5635110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+}

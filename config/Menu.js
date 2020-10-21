@@ -8,7 +8,7 @@ const mainMenu =  [
     submenu:[
       {
         label: 'Quit',
-        accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+        accelerator:'CommandOrCtrl+Q',
         click(){
           app.quit();
         }

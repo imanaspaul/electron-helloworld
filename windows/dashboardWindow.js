@@ -10,7 +10,7 @@ const dashboardWindow = () => {
   dashboardWindow.on('closed', function(){
     app.quit();
   });
-
+  return dashboardWindow;
 }
 
 module.exports = dashboardWindow;
