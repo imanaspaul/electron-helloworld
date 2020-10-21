@@ -1,28 +1,12 @@
-const { app, BrowserWindow } = require('electron')
+const {app} = require('electron');
 
-function createWindow () {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  })
+// Internal imports
+const mainWindow = require("./windows/mainWindow");
 
-  win.loadFile('index.html')
-  win.webContents.openDevTools()
-}
 
-app.whenReady().then(createWindow)
+// Listen for app to be ready
+app.on('ready', () => {
+  // Create new window
+  mainWindow();
+});
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow()
-  }
-})
