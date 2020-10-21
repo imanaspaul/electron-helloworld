@@ -8,6 +8,7 @@ const msg = document.getElementById("msg");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    //  ipcRenderer.send("login");
     if(email.value != '' && password.value != ""){
         msg.innerHTML = "All values are correct";
         if(email.value == "admin@domain.com" && password.value == "root"){

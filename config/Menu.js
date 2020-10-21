@@ -14,6 +14,9 @@ const mainMenu =  [
         }
       }
     ]
+  },
+  {
+    label : "Logout"
   }
 ];
 const appMenu = Menu.buildFromTemplate(mainMenu);

@@ -3,7 +3,7 @@ const {app, Menu, ipcMain} = require('electron');
 // Internal imports
 const mainWindow = require("./windows/mainWindow");
 const signinWindow = require("./windows/signinWindow");
-// const dashboardWindow = require("./windows/dashboardWindow");
+const dashboardWindow = require("./windows/dashboardWindow");
 const appMenu = require("./config/Menu");
 const singninWindow = require('./windows/signinWindow');
 
@@ -20,15 +20,12 @@ app.on('ready', () => {
 
 // Catching events from clients
 ipcMain.on("login", ()=>{
-   signinWindow();
-  // dashboardWindow();
+   let login = mainWindow();
+   login.destroy();
+   dashboardWindow();
+   
 })
-ipcMain.on("signin", ()=>{
-   let signin = singninWindow();
-   signin.close();
-   signin = null
-  // dashboardWindow();
-})
+
 
 ipcMain.on('ondragstart', (event, filePath) => {
   event.sender.startDrag({
