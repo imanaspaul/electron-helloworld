@@ -13,14 +13,16 @@
             <div class="col-md-6 offset-md-3">
                 <h1>Login now</h1>
                 <div class="card border-0 mt-3">
-                    <div class="form-element">
-                    <input class="form-control mb-3" type="text" placeholder="Email address" autofocus>
-                    <input class="form-control mb-3" type="password" placeholder="Enter your password">
-                    <button class="btn btn-secondary">Register now</button>
-                </div>
+                    <form class="form">
+                        <input class="form-control mb-3" type="text" placeholder="Email address" autofocus id="email">
+                        <input class="form-control mb-3" type="password" placeholder="Enter your password" id="password">
+                        <button class="btn btn-secondary">Login now</button>
+                    </form>
+                    <p id="msg" class="mt-5"></p>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../assets/js/login.js"></script>
 </body>
 </html>

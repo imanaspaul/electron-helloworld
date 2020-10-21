@@ -1,7 +1,8 @@
-const {app, Menu} = require('electron');
+const {app, Menu, ipcMain} = require('electron');
 
 // Internal imports
 const mainWindow = require("./windows/mainWindow");
+const dashboardWindow = require("./windows/dashboardWindow");
 const appMenu = require("./config/Menu");
 
 
@@ -12,3 +13,8 @@ app.on('ready', () => {
   Menu.setApplicationMenu(appMenu);
 });
 
+// Catching events from clients
+ipcMain.on("login", ()=>{
+  dashboardWindow();
+  mainWindow.close();
+})

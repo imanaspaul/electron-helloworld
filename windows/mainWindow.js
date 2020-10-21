@@ -6,14 +6,14 @@ const url = require('url');
 // Initialize main window
 const mainWindow = () => {
   let mainWindow = new BrowserWindow({
-      icon : __dirname + `/assets/icons/win/icon.ico` // icon is not workinng now
-  });
+      autoHideMenuBar: true,
+      webPreferences: {
+                  nodeIntegration: true
+                      }
+    });
   // Load html in window
   mainWindow.loadFile("./templates/index.html")
-  // Quit app when closed
-  mainWindow.on('closed', function(){
-    app.quit();
-  });
+  mainWindow.webContents.openDevTools();
 }
 
 module.exports = mainWindow;
